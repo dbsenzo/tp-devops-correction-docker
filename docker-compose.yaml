@@ -17,6 +17,15 @@ services:
     networks:
       - my-network
 
+  frontend:
+    build: "frontend"
+    ports:
+      - "8080:80"
+    depends_on:
+      - simple-api
+    networks:
+      - my-network
+
   httpd:
     build: "http-server"
     ports:

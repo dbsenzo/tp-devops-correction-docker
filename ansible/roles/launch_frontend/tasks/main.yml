@@ -1,0 +1,13 @@
+- name: frontend container
+  docker_container:
+    name: frontend
+    image: "asgal/tp-devops-frontend:latest"
+    state: started
+    restart_policy: always
+    pull: always
+    ports:
+      - "8080:80"
+    networks:
+      - name: my-network
+    depends_on:
+      - simple-api
