@@ -10,9 +10,6 @@ on:
       repository:
         required: true
         type: string
-      token:
-        required: true
-        type: string  
 
 jobs:
   test-backend: 
