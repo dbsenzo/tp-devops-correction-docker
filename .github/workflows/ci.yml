@@ -5,12 +5,9 @@ on:
       - main
       - develop
   pull_request:
-  workflow_call:  # Permet d'être appelé par d'autres workflows
-    inputs:
-      repository:
-        required: true
-        type: string
-
+    branches:
+      - main
+      - develop
 jobs:
   test-backend: 
     runs-on: ubuntu-24.04
