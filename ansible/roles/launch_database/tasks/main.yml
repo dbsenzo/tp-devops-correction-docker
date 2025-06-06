@@ -5,6 +5,7 @@
     state: started
     restart_policy: always
     recreate: true
+    pull: always
     networks:
       - name: my-network
     env:

@@ -3,6 +3,7 @@
     name: httpd
     image: asgal/tp-devops-httpd
     recreate: true
+    pull: always
     ports:
       - "80:80"
     networks:
