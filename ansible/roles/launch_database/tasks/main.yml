@@ -1,0 +1,17 @@
+- name: Start PostgreSQL container
+  docker_container:
+    name: database
+    image: asgal/tp-devops-database
+    state: started
+    restart_policy: always
+    recreate: true
+    networks:
+      - name: my-network
+    env:
+      POSTGRES_USER: "{{ db_user }}"
+      POSTGRES_PASSWORD: "{{ db_password }}"
+      POSTGRES_DB: "{{ db_name }}"
+    volumes:
+      - /data/postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

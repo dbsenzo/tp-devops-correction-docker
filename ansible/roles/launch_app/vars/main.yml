@@ -1,0 +1,4 @@
+db_password: "postgres"
+db_user: "usr"
+db_name: "db"
+db_host: "database"

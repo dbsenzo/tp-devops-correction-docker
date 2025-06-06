@@ -1,0 +1,12 @@
+- name: Run backend
+  docker_container:
+    name: simple-api
+    image: asgal/tp-devops-simple-api
+    recreate: true
+    env:
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://{{ db_host }}:5432/{{ db_name }}"
+      SPRING_DATASOURCE_USERNAME: "{{ db_user }}"
+      SPRING_DATASOURCE_PASSWORD: "{{ db_password }}"
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+    networks:
+      - name: "my-network"

@@ -1,0 +1,9 @@
+- name: Run HTTPD
+  docker_container:
+    name: httpd
+    image: asgal/tp-devops-httpd
+    recreate: true
+    ports:
+      - "80:80"
+    networks:
+      - name: "my-network"
