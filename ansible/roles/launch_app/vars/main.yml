@@ -1,4 +1,4 @@
-db_password: "postgres"
-db_user: "usr"
-db_name: "db"
-db_host: "database"
+db_password: ${{ secrets.POSTGRES_DB_PASSWORD }}
+db_user: ${{ secrets.POSTGRES_DB_USER }}
+db_name: ${{ secrets.POSTGRES_DB_NAME }}
+db_host: ${{ secrets.POSTGRES_DB_HOST }}
