@@ -35,4 +35,8 @@ jobs:
       - name: Run Ansible playbook
         run: |
           cd ansible
-          ansible-playbook -i inventories/setup.yml playbook.yml
+          ansible-playbook -i inventories/setup.yml playbook.yml \
+            -e "postgres_db_password=${{ secrets.POSTGRES_DB_PASSWORD }}" \
+            -e "postgres_db_user=${{ secrets.POSTGRES_DB_USER }}" \
+            -e "postgres_db_name=${{ secrets.POSTGRES_DB_NAME }}" \
+            -e "postgres_db_host=${{ secrets.POSTGRES_DB_HOST }}"
