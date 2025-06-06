@@ -26,6 +26,11 @@ public class StudentController {
         return  ResponseEntity.ok(studentService.getAll());
     }
 
+    @GetMapping(value = "/tests")
+    public ResponseEntity<Object> getTests() {
+        return  ResponseEntity.ok(studentService.getAll());
+    }
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<Object> getStudentById(@PathVariable(name="id") long id) {
         Optional<Student> studentOptional = Optional.ofNullable(this.studentService.getStudentById(id));
