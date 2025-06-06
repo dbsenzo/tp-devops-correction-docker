@@ -2,7 +2,7 @@ name: Ansible Deployment
 
 on:
   workflow_run:
-    workflows: ["CD Pipeline"]
+    workflows: ["CI Pipeline", "CD Pipeline"]
     types:
       - completed
     branches:
