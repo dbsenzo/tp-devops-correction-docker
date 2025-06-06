@@ -5,6 +5,16 @@ on:
       - main
       - develop
   pull_request:
+  workflow_call:
+    inputs:
+      java-version:
+        description: 'Java version to use'
+        type: string
+        default: '21'
+      distribution:
+        description: 'Java distribution to use'
+        type: string
+        default: 'temurin'
 
 jobs:
   test-backend: 
@@ -12,11 +22,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Set up JDK ${{ inputs.java-version }}
         uses: actions/setup-java@v4
         with: 
-          java-version: 21
-          distribution: 'temurin'
+          java-version: ${{ inputs.java-version }}
+          distribution: ${{ inputs.distribution }}
 
       - name: Build and test with Maven
         run: cd simple-api && mvn clean verify --file ./pom.xml 
