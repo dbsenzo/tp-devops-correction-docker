@@ -5,8 +5,14 @@ on:
       - main
       - develop
   pull_request:
-  workflow_call:
-  
+  workflow_call:  # Permet d'être appelé par d'autres workflows
+    inputs:
+      repository:
+        required: true
+        type: string
+      token:
+        required: true
+        type: string  
 
 jobs:
   test-backend: 
