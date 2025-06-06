@@ -8,5 +8,3 @@
       - "8080:80"
     networks:
       - name: "my-network"
-    depends_on:
-      - simple-api
